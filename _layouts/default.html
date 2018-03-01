@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Blog by pythonandchips</title>
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{site.base_url}}css/main.css" />
+  </head>
+  <body>
+    <header class="header is-container">
+      <h1 class="header-title">./pythonandchips.net</h1>
+      <nav class="header-nav">
+        <ul class="header-nav-links">
+					{% for node in site.data.nav %}
+						{% if page.url == node.url %}
+							<li class="header-nav-links-link"><a href="{{node.url}}" class="is-current">{{node.title}}</a></li>
+						{% else %}
+							<li class="header-nav-links-link"><a href="{{node.url}}">{{node.title}}</a></li>
+						{% endif %}
+					{% endfor %}
+        </ul>
+      </nav>
+    </header>
+    <main class="main-container is-container">
+      <section class="content">
+        {{ content }}
+      </section>
+      <aside class="side-content">
+        <h3>Around the web</h3>
+        <ul class="side-content-links">
+          <li class="side-content-links-link"><a href="https://twitter.com/colin_gemmell">Twitter</a></li>
+          <li class="side-content-links-link"><a href="http://github.com/pythonandchips">Github</a></li>
+        </ul>
+      </aside>
+    </main>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29448045-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

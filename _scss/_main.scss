@@ -1,0 +1,97 @@
+@import 'reset';
+@import 'font';
+
+body {
+  font-family: $regular-font-family;
+  color: $text-color;
+  padding: 10px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+	margin-bottom: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 15px 0;
+}
+
+a {
+  color: #1e177b;
+  text-decoration: none;
+	line-height: 1.2em;
+}
+
+p {
+	line-height: 1.2em;
+  padding: 0.3em 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.header {
+  border-bottom: solid 1px #CACACA;
+  padding-bottom: 10px;
+  &-title{
+    font-size: $heading-font-size;
+  }
+
+  &-nav-links-link {
+    display: inline-block;
+    padding-right: 10px;
+
+    a {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: [main] auto 3em [side] 40%;
+
+  a {
+    padding-right: 10px;
+  }
+}
+
+.side-content {
+  grid-column: side;
+
+  &-links-link {
+    padding-bottom: 10px;
+  }
+}
+
+.is-container {
+  padding: 10px 15px;
+}
+
+.is-current {
+	font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: [main] auto 2em [side] auto;
+  }
+
+  .side-content {
+    grid-row: side;
+    grid-column: unset;
+    border-top: solid 1px #CACACA;
+
+    &-links-link {
+      display: inline-block;
+      padding-right: 10px;
+    }
+  }
+}

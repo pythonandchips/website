@@ -1,0 +1,28 @@
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://pythonandchips.net" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+
+sass:
+  sass_dir: _scss
+  style: compressed
+
+pages:
+  - title: about
+    url: index.html
+  - title: projects
+    url: projects.html
+  - title: talks
+    url: talks.html
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
